@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinyChat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar left-sidebar">
+            <div class="logo-container">
+                <div class="logo">tinyChat</div>
+                <button id="new-chat-btn" class="new-chat-btn">
+                    <i class="fas fa-plus"></i> New Chat
+                </button>
+            </div>
+            
+            <div class="history-container">
+                <h3>Recent Chats</h3>
+                <div id="chat-history" class="chat-list">
+                    <!-- Chat history items will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="upload-container">
+                <h3>Upload Documents</h3>
+                <form id="file-upload-form" class="upload-form">
+                    <label for="file-upload" class="upload-label">
+                        <i class="fas fa-file-upload"></i> Upload File
+                    </label>
+                    <input type="file" id="file-upload" hidden>
+                </form>
+                
+                <div class="url-upload">
+                    <input type="text" id="url-input" placeholder="Enter webpage URL">
+                    <button id="url-upload-btn">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="user-section">
+                <div class="db-stats">
+                    <span id="db-stats-count">0</span> chunks in database
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Ali</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Chat Area -->
+        <div class="main-chat">
+            <div class="chat-header">
+                <h2 id="current-chat-title">New Conversation</h2>
+            </div>
+            
+            <div id="chat-messages" class="chat-messages">
+                <div class="welcome-message">
+                    <h2>Welcome to tinyChat</h2>
+                    <p>Get AI powered insights from your documents, files and excel sheets. Upload documents or provide URLs to get started.</p>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea id="chat-input" placeholder="Type your message here..." rows="1"></textarea>
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-tools">
+                    <button id="attachment-button">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <div class="sidebar right-sidebar">
+            <div class="context-header">
+                <h3>Context & Sources</h3>
+            </div>
+            
+            <div id="context-panel" class="context-panel">
+                <!-- Context snippets will be inserted here -->
+                <div class="no-context">
+                    <p>Ask a question to see relevant context sources.</p>
+                </div>
+            </div>
+            
+            <div class="docs-panel">
+                <h3>Document Library</h3>
+                <div id="documents-list" class="documents-list">
+                    <!-- Document list will be inserted here -->
+                    <div class="no-docs">
+                        <p>Upload documents to see them here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modals -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Upload Document</h2>
+            <form id="modal-upload-form">
+                <div class="form-group">
+                    <label for="modal-file-upload">Choose File</label>
+                    <input type="file" id="modal-file-upload">
+                </div>
+                <button type="submit" class="submit-btn">Upload</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

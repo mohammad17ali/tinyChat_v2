@@ -1,7 +1,11 @@
-# Flask Web App Starter
+# tinyChat
+A simple RAG powered chatbot, built on TinyLlama 1.1B, using FAISS for similarity search in the vector database. 
 
-A Flask starter template as per [these docs](https://flask.palletsprojects.com/en/3.0.x/quickstart/#a-minimal-application).
+## Architecture
+![image](assets/arch.png)
 
-## Getting Started
+## Frontend
+![image](assets/image.png)
 
-Previews should run automatically when starting a workspace.
+## Backend
+### Libraries used

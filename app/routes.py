@@ -102,7 +102,7 @@ def upload_url():
     try:
         from app.chatbot.document_processor import DocumentProcessor
         text = DocumentProcessor.process_webpage(url)
-        chatbot.vector_db.add_text(text, {"source": url}, chatbot)
+        chatbot.vector_db.add_text(text, {"source": url})
         chatbot.vector_db.save("data/vector_db")
         current_app.logger.info(f"Added {url} to vector DB.")
 

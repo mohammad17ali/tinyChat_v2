@@ -3,7 +3,7 @@
 class Config:
     def __init__(self):
         # Vector database settings
-        self.vector_dim = 768  # Dimension of embeddings
+        self.vector_dim = 384  # Dimension of embeddings
         
         # Chunking settings
         self.chunk_size = 500  # Maximum chunk size in characters
